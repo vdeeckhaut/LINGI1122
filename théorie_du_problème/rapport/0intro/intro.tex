@@ -1,4 +1,6 @@
 %intro
+
+\section*{Introduction}
 Dans le cadre du cours de méthode de conception de programmes, il nous a été demandé de résoudre le problème suivant: étant donné un graphe dirigé, déterminer si celui-ci contient ou non un cycle. L'algorithme utilisé doit donc ressortir une réponse booléenne.\\
 
 L'algorithme que nous devons utiliser est le suivant: supprimer du graphe tous les nœuds qui n'ont pas d'arête entrante, ainsi que les arêtes dont ces nœuds sont l'origine. En répétant cette opération, deux cas peuvent survenir: soit il n'y a plus de nœud disponible, et nous pouvons conclure qu'il n'existe pas de cycle dans le graphe de base, soit il ne reste que des nœuds avec au moins une arête entrante, auquel cas il existe au moins un cycle dans le graphe.
