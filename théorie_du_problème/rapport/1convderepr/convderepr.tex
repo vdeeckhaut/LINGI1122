@@ -1,0 +1,21 @@
+\section{Conventions de représentations}
+
+\subsection*{Présentation de la convention retenue}
+L'algorithme prend un graphe orienté en entrée et retourne un booléen, qui indique si le graphe possède un cycle ou non. Il faut donc une convention de réprésentation du graphe pour que l'algorithme puisse fonctionner. \\
+
+Le graphe sera représenté en utilisant une variante de la matrice d'adjacence. Cette matrice est une matrice carrée dont la dimension est égale au nombre de noeuds du graphe. Chaque entrée $(i,j)$ avec $0\leq i,j \leq n-1$ indique le nombre d'arêtes allant du noeud $i$ au noeud $j$.\\
+
+La matrice d'adjacence sera quant à elle représentée par un tableau d'entiers à 2 dimensions. \\
+
+Nous donnons ici un exemple d'une telle représentation. Le graphe donné ci-dessous sera représenté par le tableau suivant : 
+
+\subsection*{Motivations}
+Le fait de représenter un graphe par le tableau à double entrée décrit précédemment possède divers avantages. Ceux-ci sont les suivants : \\
+
+\begin{itemize}
+\item \textbf{Facilité d'implémentation} : dans l'algorithme à implémenter, les actions principales à effectuer sur le graphe sont de parcourir les noeuds et de les supprimer. L'implémentation de ces deux fonctionnalités devient très facile. En effet, pour le parcours des noeuds, il suffit de parcourir le tableau à l'aide de boucles sur ses indices et, pour la suppression, il suffit de marquer la ligne et la colonne associées au noeud comme ne devant plus être parcourues.
+
+\item \textbf{Complexité satisfaisante} : on déduit de ce qui a été dit au point précédent que la recherche d'un noeud sans arrêtes entrantes se fait en $O(n^2)$ et que la suppression de celui-ci (ou plus précisément le marquage dans notre cas) se fait en $O(1)$. Ces complexités étant polynomiales, celles-ci sont considérées comme satisfaisantes. De plus, d'autres représentations possibles ont été considérées et aucune ne donnait une meilleure complexité pour la recherche et la suppression.
+
+\item \textbf{Marquage} : il a été décidé de marquer la ligne et la colonne associées à un noeud à supprimer au lieu de les supprimer du tableau. En effet, cela évite de devoir recopier le tableau dans un tableau de plus petite taille, ce qui est une opération qui se fait en $O(n^2)$ alors que le marquage se fait en $O(1)$.
+\end{itemize}
