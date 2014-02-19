@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.1.26)  19 FEB 2014 17:40
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.1.26)  19 FEB 2014 17:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1276,12 +1276,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
  []
 
 [2 <./1convderepr/schema.jpg>]) (./2thduprob/demoAlgo.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--4
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
@@ -1315,7 +1310,7 @@ ve/2012/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive
 texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2012/te
 xmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2012/texm
 f-dist/fonts/type1/public/cm-super/sfrm1728.pfb>
-Output written on main.pdf (3 pages, 247168 bytes).
+Output written on main.pdf (3 pages, 248227 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  60 compressed objects within 1 object stream
