@@ -3,13 +3,13 @@
 \subsection{Présentation de la convention retenue}
 L'algorithme prend un graphe dirigé en entrée et retourne un booléen, qui indique si le graphe possède un cycle ou non. Il nous faut donc définir une convention de représentation d'un graphe dirigé sur lequel notre algorithme va s'appliquer. \\
 
-Le graphe sera représenté en utilisant des listes d'adjacence (adjacency list structure). Dans cette structure, chaque objet noeud contient une référence vers la liste des arêtes qui sortent de celui-ci (mais pas celles entrantes). De même, chaque objet arête, contient une référence au noeud vers lequel elle se dirige. La Figure~\ref{schéma} illustre cette structure dans le cas d'un graphe non dirigé où $V$ est l'ensemble des sommets $I(v)$ représente la liste des arêtes adjacentes au noeud $v$ et $E$ est l'ensemble des arêtes. Nous adaptons un peu ce schéma pour le cas d'un graphe dirigé sur lequel on appliquera notre algorithme en disant qu'un noeud ne doit connaître que la liste des arêtes sortantes et qu'une arête ne doit connaitre que sa destination. Nous ajoutons également à la classe noeud une variable d'instance incounter comptant le nombre d'arêtes entrantes au noeud. 
+Le graphe sera représenté en utilisant des listes d'adjacence (adjacency list structure). Dans cette structure, chaque objet noeud contient une référence vers la liste des arêtes qui sortent de celui-ci (mais pas celles entrantes). De même, chaque objet arête, contient une référence au noeud vers lequel elle se dirige. La Figure~\ref{adj} illustre cette structure dans le cas d'un graphe non dirigé où $V$ est l'ensemble des sommets $I(v)$ représente la liste des arêtes adjacentes au noeud $v$ et $E$ est l'ensemble des arêtes. Nous adaptons un peu ce schéma pour le cas d'un graphe dirigé sur lequel on appliquera notre algorithme en disant qu'un noeud ne doit connaître que la liste des arêtes sortantes et qu'une arête ne doit connaitre que sa destination. Nous ajoutons également à la classe noeud une variable d'instance incounter comptant le nombre d'arêtes entrantes au noeud. 
 
 \begin{figure}[!h]
 	\centering
          \includegraphics[width=0.5\textwidth]{1convderepr/schema.jpg}
-         \label{schéma}
          \caption{Liste d'adjacence}
+          \label{adj}
 \end{figure}
 
 \subsection{Motivations}
