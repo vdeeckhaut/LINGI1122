@@ -39,28 +39,18 @@ Titulaire : José Vander Meulen\\}
 
 \begin{frame}{Table des matières}
 \begin{enumerate}
-  \item Introduction
-  \item Description générale
-  \item Description détaillée
-  \begin{enumerate}
-    \item Bobine émettrice
-    \item Bobine portable
-    	\begin{enumerate}
-		 \item Oscillateur RC
-		 \item Signal codé
-		 \item Modulateur
-		 \item Dimensionnement de la bobine
-		 \end{enumerate}
-    \item Bobine réceptrice
-    	\begin{enumerate}
-		 \item Amplificateur
-		 \item Détecteur de crêtes
-		 \item Capacité
-		 \item Comparateur
-		 \item Décodeur
-		 \end{enumerate}
-  \end{enumerate}
-  \item Tests Paramétriques
-  \item Conclusion
+  \item Contexte
+  \item Conventions de représentation
+  \item Théorie du problème
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Contexte}
+\textbf{Problème}: étant donné un graphe dirigé, déterminer si celui-ci contient ou non un cycle.\\
+\vspace{0.5cm}
+\textbf{Algorithme}: supprimer tous les nœuds qui n'ont pas d'arête entrante, ainsi que les arêtes dont ces nœuds sont l'origine. En répétant cette opération, deux cas peuvent survenir: 
+\begin{enumerate}
+\item plus de nœud disponible $\rightarrow$ pas de cycle;
+\item il ne reste que des nœuds avec au moins une arête entrante $\rightarrow$ au moins un cycle dans le graphe.
 \end{enumerate}
 \end{frame}
