@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.3.31)  19 FEB 2014 10:33
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.3.31)  19 FEB 2014 10:43
 entering extended mode
 **main.tex
 
@@ -1557,6 +1557,10 @@ repr/convderepr.tex [4
 (C:\Users\Ben\Documents\GitHub\LINGI1122\théorie_du_problème\slides\2thdupr
 ob/thduprob.tex [5
 
+] [6
+
+] [7
+
 ])
 \tf@nav=\write6
 \tf@toc=\write7
@@ -1577,23 +1581,25 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 23134 strings out of 494045
- 475033 string characters out of 3148393
- 627096 words of memory out of 3000000
- 25861 multiletter control sequences out of 15000+200000
- 9640 words of font info for 36 fonts, out of 3000000 for 9000
+ 23173 strings out of 494045
+ 476113 string characters out of 3148393
+ 629096 words of memory out of 3000000
+ 25895 multiletter control sequences out of 15000+200000
+ 9946 words of font info for 37 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  50i,16n,59p,421b,614s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (5 pages, 89635 bytes).
+nts/type1/public/amsfonts/cm/cmss9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmssi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+msy10.pfb>
+Output written on main.pdf (7 pages, 116267 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 107 PDF objects out of 1000 (max. 8388607)
+ 15 named destinations out of 1000 (max. 500000)
+ 62 words of extra memory for PDF output out of 10000 (max. 10000000)
 

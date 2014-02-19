@@ -16,3 +16,33 @@ Un \textbf{graphe dirigé}, ou orienté, est un triplet $(V,E,\psi)$ où:
 Un \textbf{cycle} est un parcours fermé dont les sommets d'origine et intérieurs sont tous distincts. Un graphe qui ne contient pas de cycle est dit acyclique.
 
 \end{frame}
+
+\begin{frame}[allowframebreaks]{L'algorithme est juste}
+
+Soit $G$ un graphe possédant n nœuds $v$ et $m$ arêtes $e$. Procédons par l'absurde, et supposons que tous les nœuds de $G$ possèdent une arête entrante, et que $G$ est acyclique.\\
+
+\begin{itemize}
+\item On choisit arbitrairement le nœud $v_i$, par hypothèse le nœud $v_i$ possède au moins une arête entrante. 
+\item On choisit arbitrairement l'une des ces arêtes entrantes et on supprime les éventuelles autres arêtes entrantes de $v_i$, on arrive alors au nœud $v_j$, qui possède également au moins une arête entrante(par hypothèse).
+\begin{itemize}
+\item Soit on arrive à un nœud déjà visité et la démonstration est finie.
+\item Soit on arrive à un nœud qu'on n'avait pas encore visité et on réitère l'algorithme.
+\end{itemize}
+\item Comme le nombre de nœuds de $G$ est fini, on arrive au dernier nœud (puisqu'on n'a pas de cycle jusqu'à présent). Hors, par hypothèse ce dernier nœud possède également une arête entrante qui ne peut pointer vers un autre nœud qu'un de ceux visité $\Rightarrow$ il y a un cycle et contradiction.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]{L'algorithme se termine}
+
+Le graphe $G$ possède un nombre fini de nœuds et d'arêtes.\\
+
+A chaque itération 
+\begin{itemize}
+\item Il ne reste aucun nœud $\Rightarrow$ Le programme s'arrête.
+\item Tous les nœuds ont au moins une arête entrante $\Rightarrow$ Le programme s'arrête.
+\item Il existe un nœud ne possédant pas d'arête entrante. Ce nœud (et ses arêtes) est retiré par l'algorithme. Comme le graphe $G$ possède, par hypothèse, un nombre fini de nœuds, il finit par se retrouver dans l'une des situations précédentes $\Rightarrow$ Le programme s'arrête.
+\end{itemize} 
+
+\end{frame}
