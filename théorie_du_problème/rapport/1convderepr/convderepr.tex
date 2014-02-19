@@ -3,47 +3,20 @@
 \subsection{Présentation de la convention retenue}
 L'algorithme prend un graphe dirigé en entrée et retourne un booléen, qui indique si le graphe possède un cycle ou non. Il nous faut donc définir une convention de représentation d'un graphe dirigé sur lequel notre algorithme va s'appliquer. \\
 
-Le graphe sera représenté en utilisant la matrice d'adjacence. Cette matrice est une matrice carrée dont la dimension est égale au nombre de noeuds du graphe. Chaque entrée $(i,j)$ avec $0\leq i,j \leq n-1$ indique le nombre d'arêtes allant du noeud $i$ au noeud $j$.\\
+Le graphe sera représenté en utilisant des listes d'adjacence (adjacency list structure). Dans cette structure, chaque objet noeud contient une référence vers la liste des arêtes qui sortent de celui-ci (mais pas celles entrantes). De même, chaque objet arête, contient une référence au noeud vers lequel elle se dirige. La Figure~\ref{schéma} illustre cette structure dans le cas d'un graphe non dirigé où $V$ est l'ensemble des sommets $I(v)$ représente la liste des arêtes adjacentes au noeud $v$ et $E$ est l'ensemble des arêtes. Nous adaptons un peu ce schéma pour le cas d'un graphe dirigé sur lequel on appliquera notre algorithme en disant qu'un noeud ne doit connaître que la liste des arêtes sortantes et qu'une arête ne doit connaitre que sa destination. Nous ajoutons également à la classe noeud une variable d'instance incounter comptant le nombre d'arêtes entrantes au noeud. 
 
-Nous donnons ici un exemple d'une telle représentation. Le graphe donné ci-dessous sera représenté par le tableau suivant :
-\begin{multicols}{2}
-\begin{center}
-\begin{tabular}{c|ccccc}
-&0 & 1 & 2 & 3 & 4\\
-\hline
-0&0&1&0&0&0\\
-1&0&0&1&0&0\\
-2&1&0&0&0&0\\
-3&0&1&0&0&0\\
-4&0&0&0&1&0\\
-\end{tabular}
-\begin{tikzpicture}
-\draw (1,0) circle (0.5) ;
-\draw (1,0) node {1} ;
-\draw[->] (1.3,0.4) -- (2,1.5);
-\draw (2,2) circle (0.5);
-\draw (2,2) node {2} ;
-\draw[->] (1.5,2) -- (0.5,2);
-\draw (0,2) circle (0.5);
-\draw (0,2) node {0} ;
-\draw[->] (0,1.5) -- (0.6,0.3);
-\draw (3.5,0) circle (0.5);
-\draw (3.5,0) node {3} ;
-\draw[->] (3,0) -- (1.5,0);
-\draw (4,1.8) circle (0.5);
-\draw (4,1.8) node {4} ;
-\draw[->] (3.8,1.35) -- (3.5,0.5);
-\end{tikzpicture}
-\end{center}
-\end{multicols}
+\begin{figure}[!h]
+	\centering
+         \includegraphics[width=0.5\textwidth]{1convderepr/schema.jpg}
+         \label{schéma}
+         \caption{Liste d'adjacence}
+\end{figure}
 
 \subsection{Motivations}
-Le fait de représenter un graphe par le tableau à double entrée décrit précédemment possède divers avantages. Ceux-ci sont les suivants : \\
+Le fait de représenter un graphe avec la structure décrite précédemment possède divers avantages. Ceux-ci sont les suivants : \\
 
 \begin{itemize}
-\item \textbf{Facilité d'implémentation} : dans l'algorithme à implémenter, les actions principales à effectuer sur le graphe sont de parcourir les noeuds, de déterminer si ils ont des arêtes entrantes et de les supprimer. L'implémentation de ces deux fonctionnalités devient très facile. En effet, pour le parcours des noeuds, il suffit de parcourir le tableau à l'aide de boucles sur ses indices. Pour déterminer si un noeud $j$ n'a aucune arête entrante, il suffit que la somme des éléments de la $j$ème colonne de la matrice d'adjacence soit nulle. Pour la suppression, il suffit de marquer la ligne et la colonne associées au noeud comme ne devant plus être parcourues.
+\item \textbf{Facilité d'implémentation} : dans l'algorithme à implémenter, les actions principales à effectuer sur le graphe sont de trouver les arêtes sortantes d'un noeud, les noeuds vers lesquels elles se dirigent et de diminuer leur incounter. L'implémentation de ces deux fonctionnalités est très facile car chaque objet contient les références nécessaires.
 
-\item \textbf{Complexité satisfaisante} : on déduit de ce qui a été dit au point précédent que la recherche d'un noeud sans arrêtes entrantes se fait en $O(n^2)$ et que la suppression de celui-ci (ou plus précisément le marquage dans notre cas) se fait en $O(1)$. Ces complexités étant polynomiales, celles-ci sont considérées comme efficaces. De plus, d'autres représentations possibles (listes d'adjacence et liste d'arêtes) ont été considérées et aucune ne donnait une meilleure complexité pour la recherche et la suppression.
-
-\item \textbf{Marquage} : il a été décidé de marquer la ligne et la colonne associées à un noeud à supprimer au lieu de les supprimer du tableau. En effet, cela évite de devoir recopier le tableau dans un tableau de plus petite taille, ce qui est une opération qui se fait en $O(n^2)$ alors que le marquage se fait en $O(1)$.
+\item \textbf{Complexité satisfaisante} : nous prouverons plus tard que la complexité temporelle de l'algorithme avec notre structure de données est en $\mathcal{O}(n + m)$ où $n$ et $m$ sont respectivement le nombre de noeud et d'arêtes du graphe. Nous ne pourrions pas faire mieux étant donné qu'il va au pire effectivement falloir passer par tous les noeuds et les arêtes. Deux autres représentations de graphe existent : la edge list structure et la adjacency matrix structure. La première a une complexité en $\mathcal{O}(m)$ pour trouver les arêtes adjacentes à un sommet alors qu'avec notre structure la complexité est en $\mathcal{O}(1)$. La matrice d'adjacence présente aussi des désavantages à ce niveau là car passer par toutes les arêtes est en $\mathcal{O}(n^2)$ au lieu de $\mathcal{O}(m)$.
 \end{itemize}
