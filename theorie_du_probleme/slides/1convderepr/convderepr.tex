@@ -1,3 +1,12 @@
 \begin{frame}[allowframebreaks]{Conventions de représentation}
 
+\textbf{Choix de la représentation: }Nous avons choisi de représenter le graphe en utilisant des \textbf{listes d'adjacence}. Cette structure est une collection de listes, une pour chaque noeud du graphe. Chaque liste est composée des arêtes sortantes, dont chaque arête contient une référence au noeud vers le quel elle se dirige.
+
+
+\textbf{Motivations: } 
+\begin{itemize}
+\item Facilité d'implémentation : les listes chaînées sont simples d'utilisation est permettent de réaliser les fonctionnalités de l'algorithme.
+\item Complexité :  $\mathcal{O}(n+m)$ moindre comparée à d'autres représentation comme la matrice d'adjacence.
+\end{itemize}
+
 \end{frame}
