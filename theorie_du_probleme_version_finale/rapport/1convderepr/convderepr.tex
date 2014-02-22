@@ -1,0 +1,34 @@
+\section{Conventions de représentations}
+
+\subsection{Présentation de la convention retenue}
+L'algorithme prend un graphe dirigé en entrée et retourne un booléen, qui indique si le graphe possède un cycle ou non. Il nous faut donc définir une convention de représentation d'un graphe dirigé sur lequel notre algorithme va s'appliquer. \\
+
+Le graphe sera représenté en utilisant des listes d'adjacence (\textit{adjacency list structure}). Dans cette structure, chaque objet noeud contient une référence vers une collection des arêtes qui sortent de celui-ci (mais pas celles entrantes). De même, chaque objet arête, contient une référence au noeud vers lequel elle se dirige. 
+La Figure~\ref{adj} illustre cette structure dans le cas d'un graphe non dirigé où $V$ est l'ensemble des sommets, $I(v)$ représente la liste des arêtes adjacentes au noeud $v$ et $E$ est l'ensemble des arêtes. Nous adaptons un peu ce schéma pour le cas d'un graphe dirigé sur lequel on appliquera notre algorithme en disant qu'un noeud ne doit connaître que la liste des arêtes sortantes et qu'une arête ne doit connaitre que sa destination. Nous ajoutons également à la classe noeud une variable d'instance \textit{incounter} comptant le nombre d'arêtes entrantes au noeud. 
+\\%Enfin, la référence des arêtes vers la collection des arêtes auquelles elles appartiennent n'est pas nécessaire dans l'algorithme utilisé et ne sera donc pas nécessaire à la structure représentant le graphe. \\
+
+En résumé, les objets noeuds sont constitués des instances suivantes : 
+\begin{itemize}
+\item Un entier \textit{incounter} qui permet de mémoriser le nombre d'arêtes entrantes du noeud.
+\item Une référence vers la collection d'arêtes dont le noeud est l'origine.\\
+\end{itemize}
+
+Les objets arêtes seront quant à eux constitués d'une référence vers le noeud dont elles sont la destination.\\
+
+Pour terminer, notons que la collection des arêtes sortantes d'un noeud sera représentée par une liste chainée. Ce choix parait judicieux car le nombre des arêtes varie selon les noeuds. 
+
+\begin{figure}[!h]
+	\centering
+         \includegraphics[width=0.5\textwidth]{1convderepr/schema.jpg}
+         \caption{Liste d'adjacence}
+          \label{adj}
+\end{figure}
+
+\subsection{Motivations}
+Le fait de représenter un graphe avec la structure décrite précédemment possède divers avantages. Ceux-ci sont les suivants : \\
+
+\begin{itemize}
+\item \textbf{Facilité d'implémentation} : dans l'algorithme à implémenter, les actions principales à effectuer sur le graphe sont de trouver les arêtes sortantes d'un noeud, les noeuds vers lesquels elles se dirigent et de diminuer leur \textit{incounter}. L'implémentation de ces deux fonctionnalités est très facile car chaque objet contient les références nécessaires.
+
+\item \textbf{Complexité satisfaisante} : la complexité temporelle de l'algorithme avec notre structure de données est en $\mathcal{O}(n + m)$ où $n$ et $m$ sont respectivement le nombre de noeuds et d'arêtes du graphe. Nous ne pourrions pas faire mieux étant donné qu'il va au pire effectivement falloir passer par tous les noeuds et les arêtes. Deux autres représentations de graphe existent : la \textit{edge list structure} et la \textit{adjacency matrix structure}. La première a une complexité en $\mathcal{O}(m)$ pour trouver les arêtes incidentes à un sommet alors qu'avec notre structure la complexité est en $\mathcal{O}(1)$. La matrice d'adjacence présente aussi des désavantages à ce niveau-là car trouver les arêtes incidentes à un noeud $v$ est en $\mathcal{O}(n)$.
+\end{itemize}

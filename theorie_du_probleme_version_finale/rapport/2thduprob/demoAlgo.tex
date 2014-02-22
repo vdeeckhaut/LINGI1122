@@ -1,0 +1,19 @@
+\subsection*{Démonstration : L'algorithme est correct.}
+\paragraph{\textit{Hypothèses :}}Soit $G$ un graphe possédant $n$ nœuds $v_i$ avec $i=1,...,n$ et $m$ arêtes $e_j$ avec $j=1,...,m$. Procédons par l'absurde, et supposons que $G$ possède un sous-graphe $H$ dont tous les noeuds possèdent une arête entrante, et que $G$ est acyclique.\\
+\begin{itemize}
+\item On choisit arbitrairement le nœud $v_i$ appartenant à $H$. Par hypothèse le nœud $v_i$ possède au moins une arête entrante. 
+\item On choisit arbitrairement l'une des ces arêtes entrantes et on prend le noeud $v_j$ qui est l'origine de cette arête et qui possède également au moins une arête entrante (par hypothèse).
+\begin{itemize}
+\item Soit on arrive à un nœud déjà visité et la démonstration est finie.
+\item Soit on arrive à un nœud qu'on n'avait pas encore visité et on réitère le point précédent.
+\end{itemize}
+\item Si tous les noeuds de $H$ ont été parcourus, comme le nombre de nœuds de $H$ est fini, on arrive au dernier nœud. Hors, par hypothèse ce dernier nœud possède également une arête entrante qui ne peut pointer vers un autre nœud qu'un de ceux visité $\Rightarrow$ il y a un cycle et donc il y a contradiction avec l'hypothèse de départ.
+\end{itemize}
+\subsection*{Démonstration : L'algorithme se finit toujours.}
+\paragraph{\textit{Hypothèse :}}Le graphe $G$ possède un nombre fini de nœuds et d'arêtes.\\
+A chaque itération, on observe plusieurs cas possibles : 
+\begin{itemize}
+\item Il ne reste aucun nœud $\Rightarrow$ Le programme s'arrête.
+\item Tous les nœuds ont au moins une arête entrante $\Rightarrow$ Le programme s'arrête.
+\item Il existe un nœud ne possédant pas d'arête entrante. Ce nœud (et ses arêtes) est retiré par l'algorithme. Comme le graphe $G$ possède, par hypothèse, un nombre fini de nœuds, il finit par se retrouver dans l'une des situations précédentes $\Rightarrow$ Le programme s'arrête.
+\end{itemize} 
